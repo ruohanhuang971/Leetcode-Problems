@@ -38,9 +38,10 @@ void printArray(vector<int> nums) {
 - How to check if vector is empty
     ```cpp
     nums.empty()
-    ``
+    ```
 - tabluar approach:
     - process left-side, process right-side => combine them together [p238]
+- A lot of times, to save time -> 2 pointers. go from both end at the same time.
 
 **Misc** 
 - 
