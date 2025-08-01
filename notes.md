@@ -43,6 +43,21 @@ Time Complexity: O(), Space Complexity: O()
     - process left-side, process right-side => combine them together [p238]
 - A lot of times, to save time -> 2 pointers. go from both end at the same time.
 
+**sliding window**
+-
+- basic sliding window for loop
+    ```cpp
+        for (int i = 0; i < nums.size(); i++) {
+            curSum += nums[i];
+            
+            if ((i + 1) >= k) { // start sliding window
+                maxSum = ((curSum > maxSum) ? curSum : maxSum);
+                curSum -= nums[(i + 1) - k];
+            }
+        
+        }
+    ```
+
 **Misc** 
 - 
 - possible to convert char -> int with '1' - '0' = 1
