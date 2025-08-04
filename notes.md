@@ -57,6 +57,10 @@ Time Complexity: O(), Space Complexity: O()
         
         }
     ```
+- intuition:
+    - only check if condition to continue is not satified and then while loop move start of window until condition is satified again
+    - 
+
 
 **Misc** 
 - 
