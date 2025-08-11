@@ -59,7 +59,23 @@ Time Complexity: O(), Space Complexity: O()
     ```
 - intuition:
     - only check if condition to continue is not satified and then while loop move start of window until condition is satified again
-    - 
+
+
+**Hash Map / Set** (should revisit)
+-
+- A lot of problems contain "how many times does _ appear/does _ appear in A but not B"
+
+
+**Stack**
+-
+- LIFO
+- Given a list of things, have rules for how the list of thing interact with each other
+- Iterate through the list and pop/push_back to a newlist based on the rules.
+
+
+**Stack**
+-
+- FIFO
 
 
 **Misc** 
@@ -96,4 +112,8 @@ Time Complexity: O(), Space Complexity: O()
         do_this();
     else
         do_that();
+    ```
+- how to get a set from a vector
+    ```cpp
+    unordered_set<int> new_set(nums.begin(), nums.end());
     ```
