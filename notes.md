@@ -78,6 +78,19 @@ Time Complexity: O(), Space Complexity: O()
 - FIFO
 
 
+**Binary Tree - DFS**
+-
+- At each node, recurse on its left and right node
+    ```cpp
+    int maxDepth(TreeNode *root) {
+        if (!root) return 0;
+        int left = maxDepth(root->left);
+        int right = maxDepth(root->right);
+        return max(left, right) + 1;
+    }
+    ```
+
+
 **Binary Tree - BFS**
 -
 - Use queue to denote which nodes to visit
@@ -111,34 +124,20 @@ Time Complexity: O(), Space Complexity: O()
     ```
 
 
-**Binary Tree - DFS**
--
-- At each node, recurse on its left and right node
-    ```cpp
-    int maxDepth(TreeNode *root) {
-        if (!root) return 0;
-        int left = maxDepth(root->left);
-        int right = maxDepth(root->right);
-        return max(left, right) + 1;
-    }
-    ```
 
 
-**Binary Tree - DFS**
+**Graph - DFS**
 -
-- Use vector to keep track of which nodes have been visited
-- if visited already -> don't visit again, otherwise add to vector of visited and visit all the node connected to it recursively
-    ```cpp
-        void visitRooms(vector<vector<int>>& rooms, int room, vector<bool>& entered){
-            if (entered[room]) {
-                return;
-            }
-            entered[room] = true;
-            for (int i = 0; i < rooms[room].size(); i++) {
-                visitRooms(rooms, rooms[room][i], entered);
-            }
-        }
-    ```
+- similar to binary tree DFS, use recursion, keep a vector of visited nodes to prevent infinite loops
+- Normally use when there are connected nodes and the connection matters
+    - ie: finding how many connected clusters there are: 547_Number_of_Provinces
+
+
+**Graph - BFS**
+-
+- similar to binary tree BFS, use queue and keep a visit vector
+- Normally have at each step need to check radius as condition for updating
+    - ie: 996_Rotting_Oranges
 
 
 **Priority Queue**
