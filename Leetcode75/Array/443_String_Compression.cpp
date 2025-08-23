@@ -3,20 +3,23 @@
 using namespace std;
 
 int compress(vector<char>& chars) {
-    int curwrite = 0;
-    int i = 0;
-    while (i < chars.size()) {
-        int groupLength = 1;
-        while (i + groupLength < chars.size() && chars[i + groupLength] == chars[i]) {
-            groupLength++;
-        }
-        chars[curwrite++] = chars[i];
-        if (groupLength > 1) {
-            for (char c : to_string(groupLength)) {
-                chars[curwrite++] = c;
+    vector<char> temp;
+    int count = 1;
+
+    for (int i = 1; i <= chars.size(); i++) {
+        if (i < chars.size() && chars[i] == chars[i - 1]) {
+            count++;
+        } else {
+            temp.push_back(chars[i - 1]);
+            if (count > 1) {
+                for (char x : to_string(count)) {
+                    temp.push_back(x);
+                }
             }
+            count = 1;
         }
-        i += groupLength;
     }
-    return curwrite;
+
+    chars = temp;
+    return chars.size();
 }

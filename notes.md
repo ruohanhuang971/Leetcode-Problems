@@ -78,9 +78,78 @@ Time Complexity: O(), Space Complexity: O()
 - FIFO
 
 
+**Binary Tree - BFS**
+-
+- Use queue to denote which nodes to visit
+    ```cpp
+    if (!root) {
+        return vector<int>();
+    }
+
+    queue<TreeNode *> visit;
+    vector<int> ans;
+    visit.push(root);
+
+    while (!visit.empty()) {
+        int size = visit.size();
+        for (int i = 0; i < size; i++) {
+            TreeNode *node = visit.front();
+
+            if (node->left) {
+                visit.push(node->left);
+            }
+            if (node->right) {
+                visit.push(node->right);
+            }
+
+            if (i == size - 1) {
+                ans.push_back(node->val);
+            }
+            visit.pop();
+        }
+    }
+    ```
+
+
+**Binary Tree - DFS**
+-
+- At each node, recurse on its left and right node
+    ```cpp
+    int maxDepth(TreeNode *root) {
+        if (!root) return 0;
+        int left = maxDepth(root->left);
+        int right = maxDepth(root->right);
+        return max(left, right) + 1;
+    }
+    ```
+
+
+**Binary Tree - DFS**
+-
+- Use vector to keep track of which nodes have been visited
+- if visited already -> don't visit again, otherwise add to vector of visited and visit all the node connected to it recursively
+    ```cpp
+        void visitRooms(vector<vector<int>>& rooms, int room, vector<bool>& entered){
+            if (entered[room]) {
+                return;
+            }
+            entered[room] = true;
+            for (int i = 0; i < rooms[room].size(); i++) {
+                visitRooms(rooms, rooms[room][i], entered);
+            }
+        }
+    ```
+
+
+**Priority Queue**
+- 
+- a container adaptor that provides constant time lookup of the largest (by default) element, at the expense of logarithmic insertion and extraction.
+
+
 **Misc** 
 - 
 - possible to convert char -> int with '1' - '0' = 1
+- reminder for recusion: space complexity need to take into account the space take up by function calls
 - how to get all subset of a set:
     ```cpp
     void subsetRecur(int i, vector<int>& arr, 
