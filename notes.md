@@ -145,6 +145,24 @@ Time Complexity: O(), Space Complexity: O()
 - a container adaptor that provides constant time lookup of the largest (by default) element, at the expense of logarithmic insertion and extraction.
 
 
+**Binary Search**
+-
+- basic search code:
+    ```cpp
+    left = 0;
+    right = m - 1;
+
+    while (left <= right) {
+        mid = (right - left) / 2 + left;
+        if ((long long int)potions[mid] * (long long int)spells[i] >= success) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }                
+    }
+    ```
+
+
 **Misc** 
 - 
 - possible to convert char -> int with '1' - '0' = 1
