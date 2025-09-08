@@ -162,6 +162,14 @@ Time Complexity: O(), Space Complexity: O()
     }
     ```
 
+**DP**
+-
+- how to approach a DP problem:
+    1. Recursive (top-down): find the recursive solution to the problem 
+    2. Recursive + memo (top-down): the previous recursion visit the same element multiple times, so keep track of already computed values in an Array and return to avoid unnessary calculations
+    3. Iterative + memo (bottom-up): conver the previous recursion (since with memo each element is only visited once now), into a for loop
+    4. Iterative + N variables (bottom-up): there is no need to keep a whole list if each time only N elements on the memo is accessed, only keep N variables instead of list then
+
 
 **Misc** 
 - 
