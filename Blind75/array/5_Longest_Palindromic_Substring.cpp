@@ -5,7 +5,7 @@ using namespace std;
 
 /*
     Time: O(N^2), Space: O(1)
-    Intuation: a palidrome can be mirrored around its center
+    Intuition: a palindrome can be mirrored around its center
         - iterate over string and for every center expand around it
         - note: center of a palindrome can be in between two letters. ex: "abba" its center are between the two 'b's.
 */
