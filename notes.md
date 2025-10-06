@@ -143,6 +143,10 @@ Time Complexity: O(), Space Complexity: O()
 **Priority Queue**
 - 
 - a container adaptor that provides constant time lookup of the largest (by default) element, at the expense of logarithmic insertion and extraction.
+```cpp
+    // min priority queue
+    std::priority_queue<int, std::vector<int>, std::greater<int>>
+```
 
 
 **Binary Search**

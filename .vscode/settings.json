@@ -49,5 +49,10 @@
         "unordered_set": "cpp",
         "set": "cpp",
         "queue": "cpp"
-    }
+    },
+    "cSpell.words": [
+        "cout",
+        "endl",
+        "nlogn"
+    ]
 }
