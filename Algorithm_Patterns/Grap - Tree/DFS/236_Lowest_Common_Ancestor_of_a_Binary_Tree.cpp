@@ -4,8 +4,12 @@ using namespace std;
 
 /*
     Time: O(N), Space: O(N)
+*/
+
+/*
     Intuition:
-        - each recursive call asks: "What important thing did I find in my subtree?"
+        - If both nodes are found in different subtrees → return current node as LCA.
+        - If only one is found (e.g. because it is the ancestor) → return that node as LCA.
     Return values:
         - nullptr = found neither target
         - p or q = found one target node

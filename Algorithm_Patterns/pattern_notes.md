@@ -249,3 +249,59 @@ Video Link: https://www.youtube.com/watch?v=Z_c4byLrNBU
     - Maintaining a top-k or bottom-k set of values
     - Real-time ranking, greedy selection, etc.
     - Need to sort on the fly, faster than O(n log n)
+
+
+
+
+
+
+# **Tricks**
+- in-order traversal of BST:
+    ```cpp
+    void helper(TreeNode* node) {
+        if (!node) return;
+
+        // go all the way left
+        helper(node->left);
+        cout << node->val << " ";
+        
+        helper(node->right);
+    }
+    ```
+- line sweep algorithm:
+    - usually used for how many meeting room needed given start and end time:
+        - count++ when meeting start and count-- when meeting end
+        - at the end return max count [ie: the most # of the meeting happening at the same time]
+    ```cpp
+    int minMeetingRooms(vector<vector<int>>& intervals) {
+        vector<int> starts, ends;
+
+        // get vector of start and end times
+        for (auto& interval : intervals) {
+            starts.push_back(interval[0]);
+            ends.push_back(interval[1]);
+        }
+
+        // Sort both arrays
+        sort(starts.begin(), starts.end());
+        sort(ends.begin(), ends.end());
+
+        int rooms = 0;
+        int maxRooms = 0;
+        int startPtr = 0;
+        int endPtr = 0;
+
+        while (startPtr < intervals.size()) {
+            if (starts[startPtr] < ends[endPtr]) {
+                rooms++;
+                maxRooms = max(maxRooms, rooms);
+                startPtr++;
+            } else {
+                rooms--;
+                endPtr++;
+            }
+        }
+
+        return maxRooms;
+    }
+    ```
