@@ -97,6 +97,8 @@
     "cSpell.words": [
         "cout",
         "endl",
-        "nlogn"
+        "nlogn",
+        "nums",
+        "strs"
     ]
 }
