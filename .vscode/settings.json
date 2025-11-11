@@ -97,6 +97,7 @@
     "cSpell.words": [
         "cout",
         "endl",
+        "millis",
         "nlogn",
         "nums",
         "strs"
