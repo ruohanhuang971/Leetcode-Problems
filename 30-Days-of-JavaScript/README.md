@@ -153,6 +153,38 @@
     Dog.prototype.isPrototypeOf(rex); // true
     ```
 
+## **JSON**
+- consists of two main data structures: objects{} and arrays[]
+    - keys in an object must be strings, while the values can be any valid JSON data type, including objects and arrays
+- **JSON.parse():**
+    - converts a JSON string into a JavaScript object, array or a primitive value (such as a string, number, boolean, or null)
+- **JSON.stringify**
+    - convert the input array/object to a string. If the array or object is empty, it returns a string with opening and closing braces or curly braces.
+
+## **Classes**
+- blueprint for creating objects that share: properties (data) & methods (functions)
+- example:
+    ```js
+    class Animal {
+        // constructor: initialize the object
+        constructor(name) {
+            // this refers to the object being created
+            this.name = name; // property
+        }
+
+        // property can also be defined like this
+        name = name;
+
+
+        // all objects created from the class have access to this method
+        speak() {            // method on the prototype
+            console.log(this.name + " makes a sound.");
+        }
+    }
+
+    const dog = new Animal("Fido");
+    dog.speak(); // "Fido makes a sound."
+    ```
 
 ## **Random Notes**
 - Array can be a key in a Map but it is treated by reference, not by value
@@ -172,3 +204,13 @@
             };
         }
         ```
+- Check if an object is an Array or an object:
+    ```js
+    if (Array.isArray(value)) {
+        // array
+    }
+
+    if (typeof value === "object") {
+        // object
+    }
+    ```
